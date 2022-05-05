@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="stopwatch.ico">
+    <link rel="stylesheet" href="style.css">
+    <title>Egg Timer</title>
+  </head>
+  <body>
+    <form id="timer-form">
+      <label for="Hours between 0-24">Hour:</label>
+        <input class="timer-input" id="hours" type="number" min="0" max="24">
+      <label for="Minutes between 0-60">Minute:</label>
+        <input class="timer-input" id="minutes" type="number" min="0" max="60">
+      <label for="Seconds between 0-60">Seconds:</label>
+        <input class="timer-input" id="seconds" type="number" min="0" max="60">
+      <button class="submit" id="submit" type="submit">START</button>
+    </form>
+  <script src="script.js"></script>
+  </body>
+</html>
