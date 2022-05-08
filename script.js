@@ -1,10 +1,13 @@
-// selecting form element
+// select form element
 const form = document.querySelector('#timer-form');
-// selecting p element
+// select p element that displays countdown
 const output = document.querySelector('#countdown-display')
+// select p element that displays times up
+const alert = document.querySelector('#times-up');
 // start event upon submit
 form.addEventListener('submit', function countdownTimer(event){
   event.preventDefault();
+  alert.innerText = '';
   // input fields in form
   const formInput = {
     hours: Number(event.target[0].value),
@@ -36,7 +39,7 @@ form.addEventListener('submit', function countdownTimer(event){
     // if the end time becomes 0 stop the function
     } else if ((total - Date.parse(new Date()) === 0)) {
       clearInterval(timerInterval);
-      output.innerText = '00 : 00 : 00';
+      alert.innerText = 'TIMES UP!';
       event.target[3].disabled = false;
     }
     // math to find how much time is left
@@ -49,19 +52,22 @@ form.addEventListener('submit', function countdownTimer(event){
     };
     // conditions for adding a 0 for the time format to be 00:00:00
     countdown.hours =
-    (countdown.hours < 10)? '0' + countdown.hours :countdown.hours;
+      (countdown.hours < 10)? '0' + countdown.hours :countdown.hours;
     countdown.minutes =
-    (countdown.minutes < 10)? '0' + countdown.minutes :countdown.minutes;
+      (countdown.minutes < 10)? '0' + countdown.minutes :countdown.minutes;
     countdown.seconds =
-    (countdown.seconds < 10)? '0' + countdown.seconds :countdown.seconds;
-    // countdown display in p element
+      (countdown.seconds < 10)? '0' + countdown.seconds :countdown.seconds;
+    // countdown display p to display countdown
     output.innerText =
-    `${countdown.hours} : ${countdown.minutes} :${countdown.seconds}`
+      `${countdown.hours} : ${countdown.minutes} :${countdown.seconds}`
   }
   // reset the form
   form.addEventListener('reset', function(event){
     event.target[3].disabled = false
+    // reset countdown display p to display no time
     output.innerText = '00 : 00 : 00';
+    // remove inner text from times up
+    alert.innerText = '';
     clearInterval(timerInterval);
   })
 })
