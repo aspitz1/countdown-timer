@@ -2,10 +2,81 @@
   margin: 0;
   padding: 0;
 }
+body {
+  background: #FFC8DD;
+  font-family: sans-serif;
+}
 .form-container {
-  margin: 5vh 7vw 0 7vw;
+  margin-top: 5vh;
+  min-width: 100vw;
+}
+.inputs {
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  font-size: 3rem;
+  color: #003E77;
+}
+.label-hours, .label-minutes, .label-seconds {
+  margin-right: 1vw;
+  font-weight: bold;
+}
+.input-hours, .input-minutes {
+  margin-right: 3vw;
+}
+.input-hours, .input-minutes, .input-seconds {
+  font-size: 3rem;
+  color: #003E77;
+  text-align: center;
+}
+.buttons {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+}
+.submit-button, .reset-button:hover {
+  cursor: pointer;
+}
+.submit-button:active {
+  color: #B5DBB3;
+}
+.reset-button:active {
+  color: #DCFFC7;
+}
+.submit-button, .reset-button {
+  font-size: 3rem;
+  padding: 1rem;
+}
+.submit-button {
+  color: #DEEFFF;
+  background: #6D4186;
+}
+.reset-button {
+  color: #DEEFFF;
+  background: #A2003E;
+}
+.output {
+  display: flex;
+  justify-content: center;
+  margin-top: 4vh;
+  color: #DEEFFF;
+  background: #000F1E;
+  font-size: 5rem;
+}
+.alert {
+  margin-top: 2vh;
+  display: flex;
+  justify-content: center;
+  font-size: 5rem;
+  font-weight: bold;
+  color: #FF0464;
+  animation: blink 2s steps(2, start) infinite;
+}
+@keyframes blink {
+  0% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
 }
