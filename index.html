@@ -8,15 +8,16 @@
   </head>
   <body>
     <form id="timer-form">
-      <label for="Hours between 0-24">Hour:</label>
-        <input class="timer-input" type="number" min="0" max="24">
-      <label for="Minutes between 0-60">Minute:</label>
-        <input class="timer-input" type="number" min="0" max="60">
-      <label for="Seconds between 0-60">Seconds:</label>
-        <input class="timer-input" type="number" min="0" max="60">
+      <label class="hours" for="Hours between 0-24">Hour:</label>
+        <input class="timer-hours" type="number" min="0" max="24">
+      <label class="minutes" for="Minutes between 0-60">Minute:</label>
+        <input class="timer-minutes" type="number" min="0" max="60">
+      <label class="seconds" for="Seconds between 0-60">Seconds:</label>
+        <input class="timer-seconds" type="number" min="0" max="60">
       <button class="submit" type="submit">START</button>
+      <button class="reset" type="reset">RESET</button>
     </form>
-    <p id="countdown-display"></p>
+    <p id="countdown-display">00 : 00 : 00</p>
   <script src="script.js"></script>
   </body>
 </html>
