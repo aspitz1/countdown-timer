@@ -1,0 +1,11 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+}
+.form-container {
+  margin: 5vh 7vw 0 7vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
